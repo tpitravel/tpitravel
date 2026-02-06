@@ -13,14 +13,33 @@
     button { padding:8px 12px; margin-top:5px; }
   </style>
 </head>
+<script>
+const langData = {
+  en: {
+    title: "Travel Plan India 🇮🇳",
+    subtitle: "Search places in India"
+  },
+  hi: {
+    title: "ट्रैवल प्लान इंडिया 🇮🇳",
+    subtitle: "भारत में घूमने की जगह खोजें"
+  }
+};
 
+function setLang(lang) {
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.getAttribute("data-key");
+    el.innerText = langData[lang][key];
+  });
+}
+</script>
 <body>
 
 <header>
   <h1>Travel Plan India 🇮🇳</h1>
   <p>Search places in India</p>
 </header>
-
+<button onclick="setLang('en')">English</button>
+<button onclick="setLang('hi')">हिंदी</button>
 <input type="text" id="search" placeholder="Search place (Delhi, Goa...)">
 <h2 style="padding:10px;">States in India</h2>
 <div <div class="card">
