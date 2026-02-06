@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TPI – Travel Plan India</title>
+</head>
+<body>
 
+<h1>Travel Plan India</h1>
+<p>Search any Indian State</p>
+
+<input type="text" id="search" placeholder="eg: up, delhi, rajasthan">
+<button onclick="searchState()">Search</button>
+
+<hr>
+
+<h3>Popular States</h3>
+<ul>
+  <li><a href="place.html?state=up">Uttar Pradesh</a></li>
+  <li><a href="place.html?state=rajasthan">Rajasthan</a></li>
+  <li><a href="place.html?state=maharashtra">Maharashtra</a></li>
+  <li><a href="place.html?state=delhi">Delhi</a></li>
+</ul>
+
+<script>
+function searchState(){
+  const s = document.getElementById("search").value.toLowerCase().trim();
+  if(s){
+    window.location.href = "place.html?state=" + s;
+  }
+}
+</script>
+
+<hr>
+<p style="text-align:center;">
+  © 2026 | Created by <b>Mayank indoriya</b>
+</p>
+
+</body>
+</html>
