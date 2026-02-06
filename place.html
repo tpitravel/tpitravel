@@ -1,4 +1,40 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Place Details</title>
+</head>
+<body>
+
+<h1 id="title"></h1>
+<p id="info"></p>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const state = params.get("state");
+
+  if(state === "up"){
+    document.getElementById("title").innerText = "Uttar Pradesh";
+    document.getElementById("info").innerText =
+      "Taj Mahal – Timing: 6 AM to 6 PM | Ticket link: https://asi.payumoney.com";
+  }
+  else if(state === "rajasthan"){
+    document.getElementById("title").innerText = "Rajasthan";
+    document.getElementById("info").innerText =
+      "Jaipur, Udaipur, Jodhpur – Forts & Palaces";
+  }
+  else if(state === "mp"){
+    document.getElementById("title").innerText = "Madhya Pradesh";
+    document.getElementById("info").innerText =
+      "Khajuraho, Sanchi, Pachmarhi";
+  }
+  else{
+    document.getElementById("title").innerText = "No Data Found";
+  }
+</script>
+
+</body>
+</html>
 <html>
 <head>
   <meta charset="UTF-8">
