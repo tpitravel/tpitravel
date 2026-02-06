@@ -31,6 +31,99 @@
   else{
     document.getElementById("title").innerText = "No Data Found";
   }
+</script><script>
+const data = {
+  up: {
+    name: "Uttar Pradesh",
+    info: "Taj Mahal (Agra), Varanasi, Ayodhya | Timing: 6 AM – 6 PM"
+  },
+  rajasthan: {
+    name: "Rajasthan",
+    info: "Jaipur, Udaipur, Jodhpur | Forts & Palaces"
+  },
+  mp: {
+    name: "Madhya Pradesh",
+    info: "Khajuraho, Sanchi, Pachmarhi"
+  },
+  delhi: {
+    name: "Delhi",
+    info: "Red Fort, Qutub Minar, India Gate"
+  },
+  maharashtra: {
+    name: "Maharashtra",
+    info: "Mumbai, Ajanta Ellora, Shirdi"
+  },
+  gujarat: {
+    name: "Gujarat",
+    info: "Statue of Unity, Somnath, Dwarka"
+  },
+  bihar: {
+    name: "Bihar",
+    info: "Bodh Gaya, Nalanda"
+  },
+  westbengal: {
+    name: "West Bengal",
+    info: "Kolkata, Darjeeling, Sundarbans"
+  },
+  tamilnadu: {
+    name: "Tamil Nadu",
+    info: "Chennai, Madurai, Rameshwaram"
+  },
+  karnataka: {
+    name: "Karnataka",
+    info: "Bengaluru, Mysuru, Hampi"
+  },
+  kerala: {
+    name: "Kerala",
+    info: "Munnar, Alleppey, Kochi"
+  },
+  punjab: {
+    name: "Punjab",
+    info: "Golden Temple, Amritsar"
+  },
+  haryana: {
+    name: "Haryana",
+    info: "Kurukshetra, Sultanpur Bird Sanctuary"
+  },
+  himachal: {
+    name: "Himachal Pradesh",
+    info: "Shimla, Manali, Dharamshala"
+  },
+  uttarakhand: {
+    name: "Uttarakhand",
+    info: "Kedarnath, Badrinath, Nainital"
+  },
+  jammu: {
+    name: "Jammu & Kashmir",
+    info: "Srinagar, Gulmarg, Pahalgam"
+  },
+  assam: {
+    name: "Assam",
+    info: "Kaziranga, Guwahati"
+  },
+  odisha: {
+    name: "Odisha",
+    info: "Jagannath Puri, Konark"
+  },
+  telangana: {
+    name: "Telangana",
+    info: "Hyderabad, Charminar"
+  },
+  andhra: {
+    name: "Andhra Pradesh",
+    info: "Tirupati, Visakhapatnam"
+  }
+};
+
+const params = new URLSearchParams(window.location.search);
+const state = params.get("state");
+
+if (data[state]) {
+  document.getElementById("title").innerText = data[state].name;
+  document.getElementById("info").innerText = data[state].info;
+} else {
+  document.getElementById("title").innerText = "State Not Found";
+}
 </script>
 
 </body>
