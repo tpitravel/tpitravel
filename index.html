@@ -1,109 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>TPI – Travel Plan India</title>
+  <meta charset="UTF-8">
+  <title>Travel Plan India</title>
 
-<style>
-body{
-  font-family: Arial;
-  margin:0;
-  background:#f2f2f2;
-}
-header{
-  background:#ff6f00;
-  color:white;
-  padding:15px;
-  text-align:center;
-}
-.search{
-  text-align:center;
-  padding:15px;
-}
-input{
-  padding:10px;
-  width:90%;
-  max-width:400px;
-}
-.places{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-  padding:15px;
-}
-.card{
-  background:white;
-  padding:10px;
-  border-radius:8px;
-}
-.card img{
-  width:100%;
-  border-radius:8px;
-}
-footer{
-  background:#222;
-  color:white;
-  text-align:center;
-  padding:10px;
-}
-a{
-  color:#ff6f00;
-  text-decoration:none;
-}
-</style>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #f2f2f2;
+    }
+    header {
+      background: #ff6f00;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 15px auto;
+      display: block;
+      font-size: 16px;
+    }
+    .card {
+      background: white;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<h1>Travel Plan India 🇮🇳</h1>
-<p>Search & Explore India</p>
+  <h1>Travel Plan India 🇮🇳</h1>
+  <p>Search places in India</p>
 </header>
 
-<div class="search">
-<input type="text" id="searchBox" placeholder="Search place..." onkeyup="searchPlace()">
-</div>
+<input type="text" id="search" placeholder="Search place (Delhi, Goa...)" />
 
-<div class="places" id="placeList">
+<div id="list">
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg">
-<h3>Taj Mahal – Agra</h3>
-<p>Timing: 6 AM – 6 PM</p>
-<p>Ticket: ₹50</p>
-<a href="https://asi.payumoney.com" target="_blank">Book Ticket</a>
-</div>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg">
+    <h3>Taj Mahal Agra</h3>
+  </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/India_Gate_in_New_Delhi_03-2016.jpg">
-<h3>India Gate – Delhi</h3>
-<p>Open: 24 Hours</p>
-<p>Entry: Free</p>
-</div>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/India_Gate_in_New_Delhi_03-2016.jpg">
+    <h3>India Gate Delhi</h3>
+  </div>
 
-<div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Baga_Beach_Goa.jpg">
-<h3>Baga Beach – Goa</h3>
-<p>Open: All Day</p>
-<p>Entry: Free</p>
-</div>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Baga_Beach_Goa.jpg">
+    <h3>Baga Beach Goa</h3>
+  </div>
 
 </div>
-
-<footer>
-© 2026 Travel Plan India
-</footer>
 
 <script>
-function searchPlace(){
-  let input=document.getElementById("searchBox").value.toLowerCase();
-  let cards=document.getElementsByClassName("card");
+document.getElementById("search").addEventListener("keyup", function() {
+  let value = this.value.toLowerCase();
+  let cards = document.getElementsByClassName("card");
 
-  for(let i=0;i<cards.length;i++){
-    let text=cards[i].innerText.toLowerCase();
-    cards[i].style.display = text.includes(input) ? "block" : "none";
+  for (let i = 0; i < cards.length; i++) {
+    let text = cards[i].innerText.toLowerCase();
+    cards[i].style.display = text.includes(value) ? "block" : "none";
   }
-}
+});
 </script>
 
 </body>
