@@ -2,38 +2,83 @@
 <html>
 <head>
   <title>TPI – Travel Plan India</title>
+  <style>
+    body{font-family:Arial;}
+    input{padding:8px;width:250px;}
+    .card{
+      border:1px solid #ccc;
+      padding:15px;
+      margin:10px;
+      display:inline-block;
+      width:200px;
+      border-radius:8px;
+      text-align:center;
+    }
+    .card a{text-decoration:none;color:black;}
+  </style>
 </head>
 <body>
 
 <h1>Travel Plan India</h1>
-<p>Search any Indian State</p>
 
-<input type="text" id="search" placeholder="eg: up, delhi, rajasthan">
-<button onclick="searchState()">Search</button>
+<input list="states" id="search" placeholder="Search state">
+<datalist id="states">
+  <option value="up">
+  <option value="rajasthan">
+  <option value="maharashtra">
+  <option value="delhi">
+  <option value="bihar">
+  <option value="gujarat">
+  <option value="mp">
+  <option value="tamilnadu">
+  <option value="kerala">
+  <option value="karnataka">
+  <option value="punjab">
+  <option value="haryana">
+  <option value="himachal">
+  <option value="uttarakhand">
+  <option value="assam">
+  <option value="odisha">
+  <option value="telangana">
+  <option value="andhra">
+  <option value="westbengal">
+  <option value="jharkhand">
+  <option value="chhattisgarh">
+  <option value="goa">
+  <option value="sikkim">
+  <option value="manipur">
+  <option value="meghalaya">
+  <option value="mizoram">
+  <option value="nagaland">
+  <option value="tripura">
+</datalist>
 
-<hr>
-
-<h3>Popular States</h3>
-<ul>
-  <li><a href="place.html?state=up">Uttar Pradesh</a></li>
-  <li><a href="place.html?state=rajasthan">Rajasthan</a></li>
-  <li><a href="place.html?state=maharashtra">Maharashtra</a></li>
-  <li><a href="place.html?state=delhi">Delhi</a></li>
-</ul>
+<button onclick="go()">Search</button>
 
 <script>
-function searchState(){
-  const s = document.getElementById("search").value.toLowerCase().trim();
-  if(s){
-    window.location.href = "place.html?state=" + s;
-  }
+function go(){
+  const s=document.getElementById("search").value.trim();
+  if(s) location.href="place.html?state="+s;
 }
 </script>
 
 <hr>
-<p style="text-align:center;">
-  © 2026 | Created by <b>Mayank indoriya</b>
-</p>
+
+<h2>All India States</h2>
+
+<div class="card"><a href="place.html?state=up">Uttar Pradesh</a></div>
+<div class="card"><a href="place.html?state=rajasthan">Rajasthan</a></div>
+<div class="card"><a href="place.html?state=maharashtra">Maharashtra</a></div>
+<div class="card"><a href="place.html?state=delhi">Delhi</a></div>
+<div class="card"><a href="place.html?state=bihar">Bihar</a></div>
+<div class="card"><a href="place.html?state=gujarat">Gujarat</a></div>
+<div class="card"><a href="place.html?state=tamilnadu">Tamil Nadu</a></div>
+<div class="card"><a href="place.html?state=kerala">Kerala</a></div>
+<div class="card"><a href="place.html?state=karnataka">Karnataka</a></div>
+<div class="card"><a href="place.html?state=punjab">Punjab</a></div>
+
+<hr>
+<p align="center">© 2026 | Created by <b>Mayank Saini</b></p>
 
 </body>
 </html>
