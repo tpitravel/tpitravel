@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>State Details</title>
+  <title>State Details – TPI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body{font-family:Arial;}
+    body{font-family:Arial;background:#F5F7FA;}
     .card{
-      border:1px solid #ccc;
-      padding:20px;
-      max-width:400px;
+      max-width:450px;
+      margin:20px auto;
+      background:white;
+      padding:15px;
       border-radius:10px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
     }
     img{width:100%;border-radius:10px;}
     .btn{
-      background:green;
+      display:inline-block;
+      background:#FF8C00;
       color:white;
       padding:8px 12px;
       text-decoration:none;
-      display:inline-block;
-      margin-top:10px;
       border-radius:5px;
+      margin-top:8px;
     }
+    h2{color:#0A4D8C;}
+    ul{padding-left:18px;}
   </style>
 </head>
 <body>
@@ -28,34 +33,79 @@
   <h2 id="title"></h2>
   <img id="photo">
   <p id="info"></p>
-  <a id="ticket" class="btn" target="_blank">🎟 Book Ticket</a>
+
+  <h3>🎟 Ticket Booking</h3>
+  <a id="ticket" class="btn" target="_blank">Book Official Ticket</a>
+
+  <h3>🚆 Travel Cost (Approx)</h3>
+  <ul>
+    <li id="train"></li>
+    <li id="bus"></li>
+    <li id="flight"></li>
+  </ul>
 </div>
 
-<br>
-<a href="index.html">⬅ Back</a>
+<p style="text-align:center">
+  <a href="index.html">⬅ Back to Home</a>
+</p>
 
 <script>
 const data={
- up:{n:"Uttar Pradesh",i:"Taj Mahal, Varanasi",p:"https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg"},
- rajasthan:{n:"Rajasthan",i:"Jaipur, Udaipur",p:"https://upload.wikimedia.org/wikipedia/commons/0/0a/Hawa_Mahal_2011.jpg"},
- maharashtra:{n:"Maharashtra",i:"Mumbai, Ajanta",p:"https://upload.wikimedia.org/wikipedia/commons/7/7c/Gateway_of_India.jpg"},
- delhi:{n:"Delhi",i:"Red Fort, India Gate",p:"https://upload.wikimedia.org/wikipedia/commons/d/d1/India_Gate_in_New_Delhi.jpg"},
- bihar:{n:"Bihar",i:"Bodh Gaya",p:"https://upload.wikimedia.org/wikipedia/commons/3/3b/Mahabodhi_Temple.jpg"}
+  up:{
+    n:"Uttar Pradesh",
+    i:"Taj Mahal, Varanasi, Ayodhya",
+    img:"Taj_Mahal",
+    ticket:"https://asi.payumoney.com",
+    train:"Train: ₹150 – ₹500",
+    bus:"Bus: ₹300 – ₹600",
+    flight:"Flight: ₹2500+"
+  },
+  delhi:{
+    n:"Delhi",
+    i:"Red Fort, India Gate",
+    img:"India_Gate",
+    ticket:"https://asi.payumoney.com",
+    train:"Metro/Train: ₹50 – ₹300",
+    bus:"Bus: ₹100 – ₹400",
+    flight:"Flight: ₹2000+"
+  },
+  gujarat:{
+    n:"Gujarat",
+    i:"Statue of Unity",
+    img:"Statue_of_Unity",
+    ticket:"https://statueofunity.in",
+    train:"Train: ₹400 – ₹900",
+    bus:"Bus: ₹500 – ₹1000",
+    flight:"Flight: ₹3000+"
+  },
+  rajasthan:{
+    n:"Rajasthan",
+    i:"Jaipur, Udaipur, Jodhpur",
+    img:"Hawa_Mahal",
+    ticket:"https://www.rajasthantourism.gov.in",
+    train:"Train: ₹300 – ₹800",
+    bus:"Bus: ₹400 – ₹900",
+    flight:"Flight: ₹2500+"
+  }
 };
 
 const s=new URLSearchParams(location.search).get("state");
 if(data[s]){
- title.innerText=data[s].n;
- info.innerText=data[s].i;
- photo.src=data[s].p;
- ticket.href="https://www.incredibleindia.org";
+  title.innerText=data[s].n;
+  info.innerText=data[s].i;
+  photo.src="https://source.unsplash.com/600x400/?"+data[s].img;
+  ticket.href=data[s].ticket;
+  train.innerText=data[s].train;
+  bus.innerText=data[s].bus;
+  flight.innerText=data[s].flight;
 }else{
- title.innerText="Data Not Found";
+  title.innerText="Data Not Found";
 }
 </script>
 
 <hr>
-<p align="center">© 2026 | Website by <b>Mayank Saini</b></p>
+<p align="center">© 2026 | TPI – Travel Plan India<br>
+Created by <b>Mayank Saini</b></p>
 
 </body>
 </html>
