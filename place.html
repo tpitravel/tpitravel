@@ -1,88 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Place Details</title>
+  <title>State Details</title>
   <style>
-    img{
-      width:100%;
-      max-width:350px;
-      border-radius:10px;
-    }
+    body{font-family:Arial;}
     .card{
       border:1px solid #ccc;
-      padding:15px;
-      margin-top:20px;
+      padding:20px;
       max-width:400px;
+      border-radius:10px;
     }
+    img{width:100%;border-radius:10px;}
     .btn{
       background:green;
       color:white;
       padding:8px 12px;
       text-decoration:none;
-      border-radius:5px;
       display:inline-block;
       margin-top:10px;
+      border-radius:5px;
     }
   </style>
 </head>
 <body>
 
-<h1 id="title"></h1>
-
 <div class="card">
-  <img id="photo" src="">
+  <h2 id="title"></h2>
+  <img id="photo">
   <p id="info"></p>
   <a id="ticket" class="btn" target="_blank">🎟 Book Ticket</a>
 </div>
 
 <br>
-<a href="index.html">⬅ Back to Home</a>
+<a href="index.html">⬅ Back</a>
 
 <script>
-const data = {
-  up:{
-    name:"Uttar Pradesh",
-    info:"Taj Mahal, Varanasi, Ayodhya",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg",
-    ticket:"https://asi.payumoney.com"
-  },
-  rajasthan:{
-    name:"Rajasthan",
-    info:"Jaipur, Udaipur, Jodhpur",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/0/0a/Hawa_Mahal_2011.jpg",
-    ticket:"https://www.rajasthantourism.gov.in"
-  },
-  delhi:{
-    name:"Delhi",
-    info:"Red Fort, India Gate",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/d/d1/India_Gate_in_New_Delhi_03-2016.jpg",
-    ticket:"https://asi.payumoney.com"
-  },
-  maharashtra:{
-    name:"Maharashtra",
-    info:"Mumbai, Ajanta, Shirdi",
-    photo:"https://upload.wikimedia.org/wikipedia/commons/7/7c/Gateway_of_India.jpg",
-    ticket:"https://www.maharashtratourism.gov.in"
-  }
+const data={
+ up:{n:"Uttar Pradesh",i:"Taj Mahal, Varanasi",p:"https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg"},
+ rajasthan:{n:"Rajasthan",i:"Jaipur, Udaipur",p:"https://upload.wikimedia.org/wikipedia/commons/0/0a/Hawa_Mahal_2011.jpg"},
+ maharashtra:{n:"Maharashtra",i:"Mumbai, Ajanta",p:"https://upload.wikimedia.org/wikipedia/commons/7/7c/Gateway_of_India.jpg"},
+ delhi:{n:"Delhi",i:"Red Fort, India Gate",p:"https://upload.wikimedia.org/wikipedia/commons/d/d1/India_Gate_in_New_Delhi.jpg"},
+ bihar:{n:"Bihar",i:"Bodh Gaya",p:"https://upload.wikimedia.org/wikipedia/commons/3/3b/Mahabodhi_Temple.jpg"}
 };
 
-const p = new URLSearchParams(window.location.search);
-const state = p.get("state");
-
-if(data[state]){
-  document.getElementById("title").innerText = data[state].name;
-  document.getElementById("info").innerText = data[state].info;
-  document.getElementById("photo").src = data[state].photo;
-  document.getElementById("ticket").href = data[state].ticket;
+const s=new URLSearchParams(location.search).get("state");
+if(data[s]){
+ title.innerText=data[s].n;
+ info.innerText=data[s].i;
+ photo.src=data[s].p;
+ ticket.href="https://www.incredibleindia.org";
 }else{
-  document.getElementById("title").innerText = "No Data Found";
+ title.innerText="Data Not Found";
 }
 </script>
 
 <hr>
-<p style="text-align:center;">
-  © 2026 | Website by <b>Mayank indoriya</b>
-</p>
+<p align="center">© 2026 | Website by <b>Mayank Saini</b></p>
 
 </body>
 </html>
