@@ -1,161 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>State Details – TPI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{font-family:Arial;background:#F5F7FA;}
-    .card{
-      max-width:450px;
-      margin:20px auto;
-      background:white;
-      padding:15px;
-      border-radius:10px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    }
-    img{width:100%;border-radius:10px;}
-    .btn{
-      display:inline-block;
-      background:#FF8C00;
-      color:white;
-      padding:8px 12px;
-      text-decoration:none;
-      border-radius:5px;
-      margin-top:8px;
-    }
-    h2{color:#0A4D8C;}
-    ul{padding-left:18px;}
-  </style>
+  <title>State Details - TPI</title>
 </head>
 <body>
 
-<div class="card">
-  <h2 id="title"></h2>
-  <img id="photo">
-  <p id="info"></p>
+<h1 id="title"></h1>
+<p id="info"></p>
 
-  <h3>🎟 Ticket Booking</h3>
-  <a id="ticket" class="btn" target="_blank">Book Official Ticket</a>
+<a id="ticket" target="_blank">Book Ticket</a>
 
-  <h3>🚆 Travel Cost (Approx)</h3>
-  <ul>
-    <li id="train"></li>
-    <li id="bus"></li>
-    <li id="flight"></li>
-  </ul>
-</div>
+<ul>
+  <li id="train"></li>
+  <li id="bus"></li>
+  <li id="flight"></li>
+</ul>
 
-<p style="text-align:center">
-  <a href="index.html">⬅ Back to Home</a>
-</p>
+<a href="index.html">← Back</a>
 
 <script>
-const data={
-  up:{
-    n:"Uttar Pradesh",
-    i:"Taj Mahal, Varanasi, Ayodhya",
-    img:"Taj_Mahal",
-    ticket:"https://asi.payumoney.com",
-    train:"Train: ₹150 – ₹500",
-    bus:"Bus: ₹300 – ₹600",
-    flight:"Flight: ₹2500+"
-  },
-  delhi:{
-    n:"Delhi",
-    i:"Red Fort, India Gate",
-    img:"India_Gate",
-    ticket:"https://asi.payumoney.com",
-    train:"Metro/Train: ₹50 – ₹300",
-    bus:"Bus: ₹100 – ₹400",
-    flight:"Flight: ₹2000+"
-  },
-  gujarat:{
-    n:"Gujarat",
-    i:"Statue of Unity",
-    img:"Statue_of_Unity",
-    ticket:"https://statueofunity.in",
-    train:"Train: ₹400 – ₹900",
-    bus:"Bus: ₹500 – ₹1000",
-    flight:"Flight: ₹3000+"
-  },
+const data = {
   rajasthan:{
-  n:"Rajasthan",
-  i:"Jaipur, Udaipur, Jodhpur, Jaisalmer, Ajmer, Pushkar, Mount Abu, Chittorgarh, Bharatpur",
-  img:"Hawa_Mahal",
-  ticket:"https://www.rajasthantourism.gov.in",
-  train:"Train: ₹300 – ₹800",
-  bus:"Bus: ₹400 – ₹900",
-  flight:"Flight: ₹2500+"
-  }
-  /rajasthan
-   jaipur.html
-   udaipur.html
-   jodhpur.html
-   jaisalmer.html
-  <a href="rajasthan/jaipur.html">Jaipur</a><!DOCTYPE html>
-<html>
-<head>
-<title>Jaipur – Rajasthan | TPI</title>
-</head>
-<body>
-
-<h1>Jaipur – The Pink City</h1>
-
-<h3>🏰 Famous Forts & Places</h3>
-<ul>
-  <li>Hawa Mahal</li>
-  <li>Amber Fort</li>
-  <li>City Palace</li>
-  <li>Jantar Mantar</li>
-</ul>
-
-<h3>⏰ Best Time to Visit</h3>
-<p>October to March (best weather)</p>
-
-<h3>🌄 Yahan ke Drishya</h3>
-<p>Pink buildings, royal palaces, hill forts aur local bazaars</p>
-
-<a href="../index.html">⬅ Back to Home</a>
-
-</body>
-</html>
-<a href="rajasthan/udaipur.html">Udaipur</a><h1>Udaipur – City of Lakes</h1>
-
-<h3>🏰 Famous Places</h3>
-<ul>
-  <li>City Palace</li>
-  <li>Lake Pichola</li>
-  <li>Jag Mandir</li>
-  <li>Fateh Sagar Lake</li>
-</ul>
-
-<h3>⏰ Best Time</h3>
-<p>September to March</p>
-
-<h3>🌄 Drishya</h3>
-<p>Lakes, white palaces, sunset views</p>
-<a href="rajasthan/jodhpur.html">Jodhpur</a>
-<a href="rajasthan/jaisalmer.html">Jaisalmer</a>
+    n:"Rajasthan",
+    i:"Jaipur, Udaipur, Jodhpur, Jaisalmer",
+    ticket:"https://www.rajasthantourism.gov.in",
+    train:"Train ₹300–800",
+    bus:"Bus ₹400–900",
+    flight:"Flight ₹2500+"
   }
 };
 
-const s=new URLSearchParams(location.search).get("state");
+const s = new URLSearchParams(location.search).get("state");
+
 if(data[s]){
-  title.innerText=data[s].n;
-  info.innerText=data[s].i;
-  photo.src="https://source.unsplash.com/600x400/?"+data[s].img;
-  ticket.href=data[s].ticket;
-  train.innerText=data[s].train;
-  bus.innerText=data[s].bus;
-  flight.innerText=data[s].flight;
+  title.innerText = data[s].n;
+  info.innerText = data[s].i;
+  ticket.href = data[s].ticket;
+  train.innerText = data[s].train;
+  bus.innerText = data[s].bus;
+  flight.innerText = data[s].flight;
 }else{
-  title.innerText="Data Not Found";
+  title.innerText = "Data Not Found";
 }
 </script>
-
-<hr>
-<p align="center">© 2026 | TPI – Travel Plan India<br>
-Created by <b>Mayank Saini</b></p>
 
 </body>
 </html>
