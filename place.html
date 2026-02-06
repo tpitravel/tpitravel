@@ -2,155 +2,57 @@
 const data = {
   rajasthan:{
     n:"Rajasthan",
-    i:"Jaipur, Udaipur, Jodhpur, Jaisalmer",
+    i:"Jaipur, Udaipur, Jodhpur, Jaisalmer, Ajmer, Pushkar",
+    img:"rajasthan palace",
     ticket:"https://www.rajasthantourism.gov.in",
-    train:"₹300–800",
-    bus:"₹400–900",
+    train:"₹300 – ₹800",
+    bus:"₹400 – ₹900",
     flight:"₹2500+"
   },
   up:{
     n:"Uttar Pradesh",
     i:"Taj Mahal, Varanasi, Ayodhya",
+    img:"taj mahal",
     ticket:"https://asi.payumoney.com",
-    train:"₹150–500",
-    bus:"₹200–600",
-    flight:"₹2000+"
+    train:"₹150 – ₹500",
+    bus:"₹300 – ₹600",
+    flight:"₹2500+"
   },
   delhi:{
     n:"Delhi",
     i:"Red Fort, India Gate, Qutub Minar",
+    img:"india gate",
     ticket:"https://asi.payumoney.com",
-    train:"Metro ₹50–300",
-    bus:"₹100–400",
+    train:"₹50 – ₹300",
+    bus:"₹100 – ₹400",
     flight:"₹2000+"
   },
   gujarat:{
     n:"Gujarat",
     i:"Statue of Unity, Somnath",
+    img:"statue of unity",
     ticket:"https://statueofunity.in",
-    train:"₹400–900",
-    bus:"₹500–1000",
+    train:"₹400 – ₹900",
+    bus:"₹500 – ₹1000",
     flight:"₹3000+"
   },
   maharashtra:{
     n:"Maharashtra",
-    i:"Mumbai, Pune, Ajanta Ellora",
-    ticket:"https://maharashtratourism.gov.in",
-    train:"₹300–900",
-    bus:"₹400–1000",
+    i:"Mumbai, Lonavala, Ajanta Ellora",
+    img:"gateway of india",
+    ticket:"https://asi.payumoney.com",
+    train:"₹300 – ₹800",
+    bus:"₹400 – ₹900",
     flight:"₹2500+"
-  },
-  mp:{
-    n:"Madhya Pradesh",
-    i:"Khajuraho, Ujjain, Sanchi",
-    ticket:"https://www.mptourism.com",
-    train:"₹300–700",
-    bus:"₹400–800",
-    flight:"₹3000+"
-  },
-  bihar:{
-    n:"Bihar",
-    i:"Bodh Gaya, Nalanda",
-    ticket:"https://tourism.bihar.gov.in",
-    train:"₹200–600",
-    bus:"₹300–700",
-    flight:"₹3500+"
-  },
-  punjab:{
-    n:"Punjab",
-    i:"Golden Temple, Wagah Border",
-    ticket:"https://punjabtourism.punjab.gov.in",
-    train:"₹300–700",
-    bus:"₹400–800",
-    flight:"₹3000+"
-  },
-  haryana:{
-    n:"Haryana",
-    i:"Kurukshetra, Sultanpur Bird Sanctuary",
-    ticket:"https://haryanatourism.gov.in",
-    train:"₹200–500",
-    bus:"₹300–600",
-    flight:"₹3000+"
-  },
-  himachal:{
-    n:"Himachal Pradesh",
-    i:"Shimla, Manali, Dharamshala",
-    ticket:"https://himachaltourism.gov.in",
-    train:"₹400–900",
-    bus:"₹500–1000",
-    flight:"₹3500+"
-  },
-  uttarakhand:{
-    n:"Uttarakhand",
-    i:"Nainital, Mussoorie, Kedarnath",
-    ticket:"https://uttarakhandtourism.gov.in",
-    train:"₹300–800",
-    bus:"₹400–900",
-    flight:"₹3500+"
   },
   kerala:{
     n:"Kerala",
-    i:"Alleppey, Munnar, Kochi",
+    i:"Munnar, Alleppey, Wayanad",
+    img:"kerala backwaters",
     ticket:"https://www.keralatourism.org",
-    train:"₹500–1000",
-    bus:"₹600–1200",
-    flight:"₹4000+"
-  },
-  tamilnadu:{
-    n:"Tamil Nadu",
-    i:"Chennai, Madurai, Ooty",
-    ticket:"https://www.tamilnadutourism.tn.gov.in",
-    train:"₹500–1000",
-    bus:"₹600–1200",
-    flight:"₹4000+"
-  },
-  karnataka:{
-    n:"Karnataka",
-    i:"Bengaluru, Mysuru, Hampi",
-    ticket:"https://karnatakatourism.org",
-    train:"₹400–900",
-    bus:"₹500–1000",
-    flight:"₹3500+"
-  },
-  telangana:{
-    n:"Telangana",
-    i:"Hyderabad, Charminar",
-    ticket:"https://www.telanganatourism.gov.in",
-    train:"₹400–800",
-    bus:"₹500–900",
-    flight:"₹3500+"
-  },
-  odisha:{
-    n:"Odisha",
-    i:"Puri, Konark",
-    ticket:"https://odishatourism.gov.in",
-    train:"₹300–800",
-    bus:"₹400–900",
-    flight:"₹3500+"
-  },
-  westbengal:{
-    n:"West Bengal",
-    i:"Kolkata, Darjeeling",
-    ticket:"https://wbtourism.gov.in",
-    train:"₹400–900",
-    bus:"₹500–1000",
-    flight:"₹3500+"
-  },
-  assam:{
-    n:"Assam",
-    i:"Kaziranga, Guwahati",
-    ticket:"https://assamtourism.gov.in",
-    train:"₹500–1000",
-    bus:"₹600–1200",
-    flight:"₹4500+"
-  },
-  goa:{
-    n:"Goa",
-    i:"Beaches, Old Goa",
-    ticket:"https://goa-tourism.com",
-    train:"₹500–1000",
-    bus:"₹600–1200",
-    flight:"₹4000+"
+    train:"₹400 – ₹900",
+    bus:"₹500 – ₹1000",
+    flight:"₹3000+"
   }
 };
 
@@ -158,12 +60,13 @@ const s = new URLSearchParams(location.search).get("state");
 
 if(data[s]){
   title.innerText = data[s].n;
-  info.innerText = data[s].i;
-  ticket.href = data[s].ticket;
+  info.innerText  = data[s].i;
+  photo.src       = "https://source.unsplash.com/600x400/?"+data[s].img;
+  ticket.href     = data[s].ticket;
   train.innerText = "Train: " + data[s].train;
-  bus.innerText = "Bus: " + data[s].bus;
-  flight.innerText = "Flight: " + data[s].flight;
+  bus.innerText   = "Bus: " + data[s].bus;
+  flight.innerText= "Flight: " + data[s].flight;
 }else{
-  title.innerText = "Data Not Found";
+  title.innerText = "State Not Found";
 }
 </script>
