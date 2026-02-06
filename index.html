@@ -186,3 +186,14 @@ document.getElementById("search").addEventListener("keyup", function () {
 </script>
 </body>
 </html>
+<input type="text" id="search" placeholder="Search state eg: up, delhi" />
+<button onclick="searchState()">Search</button>
+
+<script>
+function searchState(){
+  const value = document.getElementById("search").value.toLowerCase().trim();
+  if(value){
+    window.location.href = "place.html?state=" + value;
+  }
+}
+</script>
