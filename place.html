@@ -1,72 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>State Details – TPI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:Arial;background:#f5f7fa}
+.card{max-width:500px;margin:20px auto;background:white;
+padding:15px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+img{width:100%;border-radius:10px}
+.btn{display:inline-block;background:#FF8C00;color:white;
+padding:8px 12px;border-radius:5px;text-decoration:none}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2 id="title"></h2>
+<img id="photo">
+<p id="info"></p>
+
+<h3>Best Time to Visit</h3>
+<p id="time"></p>
+
+<h3>Ticket Booking</h3>
+<a id="ticket" class="btn" target="_blank">Book Official Ticket</a>
+
+<h3>Travel Cost (Approx)</h3>
+<ul>
+<li id="train"></li>
+<li id="bus"></li>
+<li id="flight"></li>
+</ul>
+
+<p style="text-align:center">
+<a href="index.html">⬅ Back to Home</a>
+</p>
+</div>
+
 <script>
-const data = {
-  rajasthan:{
-    n:"Rajasthan",
-    i:"Jaipur, Udaipur, Jodhpur, Jaisalmer, Ajmer, Pushkar",
-    img:"rajasthan palace",
-    ticket:"https://www.rajasthantourism.gov.in",
-    train:"₹300 – ₹800",
-    bus:"₹400 – ₹900",
-    flight:"₹2500+"
-  },
-  up:{
-    n:"Uttar Pradesh",
-    i:"Taj Mahal, Varanasi, Ayodhya",
-    img:"taj mahal",
-    ticket:"https://asi.payumoney.com",
-    train:"₹150 – ₹500",
-    bus:"₹300 – ₹600",
-    flight:"₹2500+"
-  },
-  delhi:{
-    n:"Delhi",
-    i:"Red Fort, India Gate, Qutub Minar",
-    img:"india gate",
-    ticket:"https://asi.payumoney.com",
-    train:"₹50 – ₹300",
-    bus:"₹100 – ₹400",
-    flight:"₹2000+"
-  },
-  gujarat:{
-    n:"Gujarat",
-    i:"Statue of Unity, Somnath",
-    img:"statue of unity",
-    ticket:"https://statueofunity.in",
-    train:"₹400 – ₹900",
-    bus:"₹500 – ₹1000",
-    flight:"₹3000+"
-  },
-  maharashtra:{
-    n:"Maharashtra",
-    i:"Mumbai, Lonavala, Ajanta Ellora",
-    img:"gateway of india",
-    ticket:"https://asi.payumoney.com",
-    train:"₹300 – ₹800",
-    bus:"₹400 – ₹900",
-    flight:"₹2500+"
-  },
-  kerala:{
-    n:"Kerala",
-    i:"Munnar, Alleppey, Wayanad",
-    img:"kerala backwaters",
-    ticket:"https://www.keralatourism.org",
-    train:"₹400 – ₹900",
-    bus:"₹500 – ₹1000",
-    flight:"₹3000+"
-  }
+const data={
+rajasthan:{
+ n:"Rajasthan",
+ i:"Jaipur, Udaipur, Jodhpur, Jaisalmer, Chittorgarh, Sikar, Jhunjhunu",
+ img:"rajasthan palace",
+ time:"October to March",
+ ticket:"https://www.rajasthantourism.gov.in",
+ train:"₹300 – ₹800",
+ bus:"₹400 – ₹900",
+ flight:"₹2500+"
+},
+up:{
+ n:"Uttar Pradesh",
+ i:"Taj Mahal, Varanasi, Ayodhya",
+ img:"taj mahal",
+ time:"October to March",
+ ticket:"https://asi.payumoney.com",
+ train:"₹150 – ₹500",
+ bus:"₹300 – ₹600",
+ flight:"₹2500+"
+},
+delhi:{
+ n:"Delhi",
+ i:"Red Fort, India Gate, Qutub Minar",
+ img:"india gate",
+ time:"October to February",
+ ticket:"https://asi.payumoney.com",
+ train:"₹50 – ₹300",
+ bus:"₹100 – ₹400",
+ flight:"₹2000+"
+},
+maharashtra:{
+ n:"Maharashtra",
+ i:"Mumbai, Ajanta Ellora, Lonavala",
+ img:"gateway of india",
+ time:"October to March",
+ ticket:"https://asi.payumoney.com",
+ train:"₹300 – ₹800",
+ bus:"₹400 – ₹900",
+ flight:"₹2500+"
+},
+kerala:{
+ n:"Kerala",
+ i:"Munnar, Alleppey, Wayanad",
+ img:"kerala backwaters",
+ time:"September to March",
+ ticket:"https://www.keralatourism.org",
+ train:"₹400 – ₹900",
+ bus:"₹500 – ₹1000",
+ flight:"₹3000+"
+}
 };
 
-const s = new URLSearchParams(location.search).get("state");
+const s=new URLSearchParams(location.search).get("state");
 
 if(data[s]){
-  title.innerText = data[s].n;
-  info.innerText  = data[s].i;
-  photo.src       = "https://source.unsplash.com/600x400/?"+data[s].img;
-  ticket.href     = data[s].ticket;
-  train.innerText = "Train: " + data[s].train;
-  bus.innerText   = "Bus: " + data[s].bus;
-  flight.innerText= "Flight: " + data[s].flight;
+ title.innerText=data[s].n;
+ info.innerText=data[s].i;
+ photo.src="https://source.unsplash.com/600x400/?"+data[s].img;
+ ticket.href=data[s].ticket;
+ time.innerText=data[s].time;
+ train.innerText="Train: "+data[s].train;
+ bus.innerText="Bus: "+data[s].bus;
+ flight.innerText="Flight: "+data[s].flight;
 }else{
-  title.innerText = "State Not Found";
+ title.innerText="State Not Found";
 }
 </script>
+
+</body>
+</html>
