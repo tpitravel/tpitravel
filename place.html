@@ -1,32 +1,156 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>State Details - TPI</title>
-</head>
-<body>
-
-<h1 id="title"></h1>
-<p id="info"></p>
-
-<a id="ticket" target="_blank">Book Ticket</a>
-
-<ul>
-  <li id="train"></li>
-  <li id="bus"></li>
-  <li id="flight"></li>
-</ul>
-
-<a href="index.html">← Back</a>
-
 <script>
 const data = {
   rajasthan:{
     n:"Rajasthan",
     i:"Jaipur, Udaipur, Jodhpur, Jaisalmer",
     ticket:"https://www.rajasthantourism.gov.in",
-    train:"Train ₹300–800",
-    bus:"Bus ₹400–900",
-    flight:"Flight ₹2500+"
+    train:"₹300–800",
+    bus:"₹400–900",
+    flight:"₹2500+"
+  },
+  up:{
+    n:"Uttar Pradesh",
+    i:"Taj Mahal, Varanasi, Ayodhya",
+    ticket:"https://asi.payumoney.com",
+    train:"₹150–500",
+    bus:"₹200–600",
+    flight:"₹2000+"
+  },
+  delhi:{
+    n:"Delhi",
+    i:"Red Fort, India Gate, Qutub Minar",
+    ticket:"https://asi.payumoney.com",
+    train:"Metro ₹50–300",
+    bus:"₹100–400",
+    flight:"₹2000+"
+  },
+  gujarat:{
+    n:"Gujarat",
+    i:"Statue of Unity, Somnath",
+    ticket:"https://statueofunity.in",
+    train:"₹400–900",
+    bus:"₹500–1000",
+    flight:"₹3000+"
+  },
+  maharashtra:{
+    n:"Maharashtra",
+    i:"Mumbai, Pune, Ajanta Ellora",
+    ticket:"https://maharashtratourism.gov.in",
+    train:"₹300–900",
+    bus:"₹400–1000",
+    flight:"₹2500+"
+  },
+  mp:{
+    n:"Madhya Pradesh",
+    i:"Khajuraho, Ujjain, Sanchi",
+    ticket:"https://www.mptourism.com",
+    train:"₹300–700",
+    bus:"₹400–800",
+    flight:"₹3000+"
+  },
+  bihar:{
+    n:"Bihar",
+    i:"Bodh Gaya, Nalanda",
+    ticket:"https://tourism.bihar.gov.in",
+    train:"₹200–600",
+    bus:"₹300–700",
+    flight:"₹3500+"
+  },
+  punjab:{
+    n:"Punjab",
+    i:"Golden Temple, Wagah Border",
+    ticket:"https://punjabtourism.punjab.gov.in",
+    train:"₹300–700",
+    bus:"₹400–800",
+    flight:"₹3000+"
+  },
+  haryana:{
+    n:"Haryana",
+    i:"Kurukshetra, Sultanpur Bird Sanctuary",
+    ticket:"https://haryanatourism.gov.in",
+    train:"₹200–500",
+    bus:"₹300–600",
+    flight:"₹3000+"
+  },
+  himachal:{
+    n:"Himachal Pradesh",
+    i:"Shimla, Manali, Dharamshala",
+    ticket:"https://himachaltourism.gov.in",
+    train:"₹400–900",
+    bus:"₹500–1000",
+    flight:"₹3500+"
+  },
+  uttarakhand:{
+    n:"Uttarakhand",
+    i:"Nainital, Mussoorie, Kedarnath",
+    ticket:"https://uttarakhandtourism.gov.in",
+    train:"₹300–800",
+    bus:"₹400–900",
+    flight:"₹3500+"
+  },
+  kerala:{
+    n:"Kerala",
+    i:"Alleppey, Munnar, Kochi",
+    ticket:"https://www.keralatourism.org",
+    train:"₹500–1000",
+    bus:"₹600–1200",
+    flight:"₹4000+"
+  },
+  tamilnadu:{
+    n:"Tamil Nadu",
+    i:"Chennai, Madurai, Ooty",
+    ticket:"https://www.tamilnadutourism.tn.gov.in",
+    train:"₹500–1000",
+    bus:"₹600–1200",
+    flight:"₹4000+"
+  },
+  karnataka:{
+    n:"Karnataka",
+    i:"Bengaluru, Mysuru, Hampi",
+    ticket:"https://karnatakatourism.org",
+    train:"₹400–900",
+    bus:"₹500–1000",
+    flight:"₹3500+"
+  },
+  telangana:{
+    n:"Telangana",
+    i:"Hyderabad, Charminar",
+    ticket:"https://www.telanganatourism.gov.in",
+    train:"₹400–800",
+    bus:"₹500–900",
+    flight:"₹3500+"
+  },
+  odisha:{
+    n:"Odisha",
+    i:"Puri, Konark",
+    ticket:"https://odishatourism.gov.in",
+    train:"₹300–800",
+    bus:"₹400–900",
+    flight:"₹3500+"
+  },
+  westbengal:{
+    n:"West Bengal",
+    i:"Kolkata, Darjeeling",
+    ticket:"https://wbtourism.gov.in",
+    train:"₹400–900",
+    bus:"₹500–1000",
+    flight:"₹3500+"
+  },
+  assam:{
+    n:"Assam",
+    i:"Kaziranga, Guwahati",
+    ticket:"https://assamtourism.gov.in",
+    train:"₹500–1000",
+    bus:"₹600–1200",
+    flight:"₹4500+"
+  },
+  goa:{
+    n:"Goa",
+    i:"Beaches, Old Goa",
+    ticket:"https://goa-tourism.com",
+    train:"₹500–1000",
+    bus:"₹600–1200",
+    flight:"₹4000+"
   }
 };
 
@@ -36,13 +160,10 @@ if(data[s]){
   title.innerText = data[s].n;
   info.innerText = data[s].i;
   ticket.href = data[s].ticket;
-  train.innerText = data[s].train;
-  bus.innerText = data[s].bus;
-  flight.innerText = data[s].flight;
+  train.innerText = "Train: " + data[s].train;
+  bus.innerText = "Bus: " + data[s].bus;
+  flight.innerText = "Flight: " + data[s].flight;
 }else{
   title.innerText = "Data Not Found";
 }
 </script>
-
-</body>
-</html>
