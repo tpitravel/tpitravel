@@ -1,168 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TPI – Travel Plan India</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#F5F7FA;
-      color:#222;
-    }
-    header{
-      background:#0A4D8C;
-      color:white;
-      padding:15px 20px;
-    }
-    header h1{margin:0;}
-    header p{margin:5px 0 0;}
+<title>TPI – Travel Plan India</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;font-family:Arial;background:#f5f7fa}
+header{background:#0A4DBC;color:white;padding:15px;text-align:center}
+.hero{background:linear-gradient(to right,#0A4DBC,#FF8C00);color:white;padding:30px;text-align:center}
+input{padding:10px;width:220px;border-radius:5px;border:none}
+button{padding:10px 15px;border:none;border-radius:5px;background:#FF8C00;color:white;cursor:pointer}
+.section{padding:20px}
+.cards{display:flex;flex-wrap:wrap;justify-content:center}
+.card{width:180px;margin:10px;background:white;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.1);padding:10px}
+.card img{width:100%;border-radius:8px}
+footer{background:#0A4DBC;color:white;text-align:center;padding:10px}
+</style>
+</head>
 
-    .hero{
-      background:linear-gradient(to right,#0A4D8C,#FF8C00);
-      color:white;
-      padding:40px 20px;
-      text-align:center;
-    }
-    .hero h2{margin-bottom:10px;}
-    .hero input{
-      padding:10px;
-      width:240px;
-      border:none;
-      border-radius:5px;
-    }
-    .hero button{<p>Discover destinations, travel cost & official tickets across India</p>
-      padding:10px 14px;
-      border:none;
-      border-radius:5px;
-      background:#FF8C00;
-      color:white;
-      margin-left:5px;
-      cursor:pointer;
-    }
-    
-
-    .section{
-      padding:20px;
-      text-align:center;
-    }
-    .cards{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .card{
-      background:white;
-      width:180px;
-      margin:10px;
-      padding:15px;
-      border-radius:10px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    }
-    .card a{
-      text-decoration:none;
-      color:#0A4D8C;
-      font-weight:bold;
-    }
-
-    footer{
-      background:#0A4D8C;
-      color:white;
-      text-align:center;
-      padding:10px;
-      margin-top:20px;
-    }
-  </style>
-</head><meta name="description" content="TPI – Travel Plan India. Explore all Indian states with tourist places, travel cost and official ticket booking links.">
-<meta name="keywords" content="India travel, Indian states tourism, Taj Mahal ticket, India tour guide">
 <body>
 
 <header>
-  <h1>TPI – Travel Plan India</h1>
-  <p>Explore All Indian States | Travel • Photos • Tickets</p>
+<h1>TPI – Travel Plan India</h1>
+<p>India Travel Guide • Tickets • Cost • Best Time</p>
 </header>
 
 <div class="hero">
-  <h2>Explore Incredible India 🇮🇳</h2>
-  <p>Search any Indian state to see places, photos & tickets</p>
-
-  <input list="states" id="search" placeholder="Search state">
-  <datalist id="states">
-    <option value="up">
-    <option value="rajasthan">
-    <option value="maharashtra">
-    <option value="delhi">
-    <option value="bihar">
-    <option value="gujarat">
-    <option value="mp">
-    <option value="kerala">
-    <option value="tamilnadu">
-    <option value="karnataka">
-    <option value="punjab">
-    <option value="haryana">
-    <option value="himachal">
-    <option value="uttarakhand">
-    <option value="assam">
-    <option value="odisha">
-    <option value="telangana">
-    <option value="andhra">
-    <option value="westbengal">
-    <option value="jharkhand">
-    <option value="chhattisgarh">
-    <option value="goa">
-    <option value="sikkim">
-    <option value="manipur">
-    <option value="meghalaya">
-    <option value="mizoram">
-    <option value="nagaland">
-    <option value="tripura">
-  </datalist>
-
-  <button onclick="go()">Search</button>
+<h2>Explore Incredible India 🇮🇳</h2>
+<p>Search any Indian state</p>
+<input list="states" id="search" placeholder="Search state">
+<datalist id="states">
+<option value="rajasthan">
+<option value="up">
+<option value="delhi">
+<option value="gujarat">
+<option value="maharashtra">
+<option value="kerala">
+<option value="tamilnadu">
+<option value="karnataka">
+<option value="punjab">
+<option value="bihar">
+<option value="westbengal">
+<option value="odisha">
+<option value="assam">
+<option value="telangana">
+<option value="andhra">
+<option value="mp">
+<option value="jharkhand">
+<option value="chhattisgarh">
+<option value="uttarakhand">
+<option value="himachal">
+<option value="goa">
+<option value="sikkim">
+<option value="meghalaya">
+<option value="manipur">
+<option value="mizoram">
+<option value="nagaland">
+<option value="tripura">
+<option value="arunachal">
+</datalist>
+<br><br>
+<button onclick="go()">Search</button>
 </div>
 
 <div class="section">
-  <h2>Popular States</h2>
-  <div class="cards">
-    <div class="card"><a href="place.html?state=up">Uttar Pradesh</a></div>
-    <div class="card"><a href="place.html?state=rajasthan">Rajasthan</a></div>
-    <div class="card"><a href="place.html?state=maharashtra">Maharashtra</a></div>
-    <div class="card"><a href="place.html?state=delhi">Delhi</a></div>
-    <div class="card"><a href="place.html?state=goa">Goa</a></div>
-    <div class="card"><a href="place.html?state=kerala">Kerala</a></div>
-  </div>
+<h2 style="text-align:center">Famous Places</h2>
+<div class="cards">
+<div class="card"><img src="https://source.unsplash.com/300x200/?taj mahal"><b>Taj Mahal</b></div>
+<div class="card"><img src="https://source.unsplash.com/300x200/?jaipur palace"><b>Jaipur</b></div>
+<div class="card"><img src="https://source.unsplash.com/300x200/?kerala backwaters"><b>Kerala</b></div>
+<div class="card"><img src="https://source.unsplash.com/300x200/?varanasi ghat"><b>Varanasi</b></div>
+</div>
+</div>
+
+<div class="section">
+<h2>India Travel Guide</h2>
+<p>
+India is known for its rich culture, geography, festivals, history and climate diversity.
+From Himalayas to beaches, deserts to forests – India offers everything for travelers.
+</p>
+<p>
+Best travel season: <b>October to March</b>  
+Major festivals: Diwali, Holi, Navratri, Eid  
+Climate zones: Tropical, Desert, Mountain
+</p>
 </div>
 
 <footer>
-  © 2026 | TPI – Travel Plan India <br>
-  Created by <b>Mayank Saini</b>
-</footer><br>
-<a href="about.html" style="color:white;">About</a> |
-<a href="contact.html" style="color:white;">Contact</a> |
-<a href="privacy.html" style="color:white;">Privacy</a>
+© 2026 TPI – Travel Plan India  
+<br>Created by Mayank Saini
+</footer>
 
 <script>
 function go(){
-  const s=document.getElementById("search").value.trim();
-  if(s) location.href="place.html?state="+s;
+ let s=document.getElementById("search").value.toLowerCase();
+ location.href="place.html?state="+s;
 }
 </script>
 
 </body>
 </html>
-<h2>About Us</h2>
-<p>
-TPI – Travel Plan India ek travel information website hai
-jahan aap India ke sabhi states ke tourist places,
-travel cost aur official ticket links dekh sakte ho.
-</p>
-<h2>Contact Us</h2>
-<p>Email: tpitravelindia@gmail.com</p>
-<p>For suggestions & feedback only.</p>
-<h2>Privacy Policy</h2>
-<p>
-We do not collect personal data.
-Third‑party ads (like Google) may use cookies.
-</p>
-
-<!DOCTYPE html>
