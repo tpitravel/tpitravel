@@ -124,6 +124,21 @@ document.getElementById("search").addEventListener("keyup", function() {
   }
 });
 </script>
+<script>
+document.getElementById("search").addEventListener("keyup", function () {
+  let value = this.value.toLowerCase();
+  let cards = document.getElementsByClassName("card");
 
+  for (let i = 0; i < cards.length; i++) {
+    let text = cards[i].innerText.toLowerCase();
+
+    if (text.includes(value)) {
+      cards[i].style.display = "block";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+});
+</script>
 </body>
 </html>
