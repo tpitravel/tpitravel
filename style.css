@@ -62,3 +62,36 @@ footer{
   text-align:center;
   padding:10px;
 }
+.slider-section{
+  width:100%;
+  overflow:hidden;
+}
+
+.slider{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+}
+
+.slides{
+  display:flex;
+  width:400%;
+  animation:slide 8s infinite;
+}
+
+.slides img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+}
+
+@keyframes slide{
+  0% {margin-left:0%;}
+  25% {margin-left:0%;}
+  30% {margin-left:-100%;}
+  50% {margin-left:-100%;}
+  55% {margin-left:-200%;}
+  75% {margin-left:-200%;}
+  80% {margin-left:-300%;}
+  100% {margin-left:-300%;}
+}
