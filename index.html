@@ -1,73 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>TPI – Travel Plan India</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <h1>TPI – Travel Plan India 🇮🇳</h1>
-  <p>Explore All Indian States • Photos • Tickets • Cost</p>
-</header>
-
-<section class="hero">
-  <h2>Explore Incredible India</h2>
-
-  <input list="states" id="search" placeholder="Search any Indian state">
-  <datalist id="states">
-    <option value="rajasthan">
-    <option value="uttar pradesh">
-    <option value="maharashtra">
-    <option value="gujarat">
-    <option value="kerala">
-    <option value="delhi">
-    <option value="bihar">
-    <option value="madhya pradesh">
-    <option value="tamil nadu">
-    <option value="karnataka">
-    <!-- baaki states later add ho sakte -->
-  </datalist>
-
-  <button onclick="go()">Search</button>
-</section>
-
-<!-- Auto Scroll Famous Places -->
-<section>
-  <h2 style="text-align:center">Famous Places</h2>
-  <section class="slider-section">
+<section class="slider-section">
   <div class="slider">
-    <div class="slides">
+
+    <div class="slides" id="slides">
       <img src="https://picsum.photos/1200/400?1">
       <img src="https://picsum.photos/1200/400?2">
       <img src="https://picsum.photos/1200/400?3">
       <img src="https://picsum.photos/1200/400?4">
     </div>
+
+    <!-- Arrows -->
+    <button class="prev" onclick="moveSlide(-1)">❮</button>
+    <button class="next" onclick="moveSlide(1)">❯</button>
+
+    <!-- Dots -->
+    <div class="dots">
+      <span onclick="currentSlide(0)"></span>
+      <span onclick="currentSlide(1)"></span>
+      <span onclick="currentSlide(2)"></span>
+      <span onclick="currentSlide(3)"></span>
+    </div>
+
   </div>
 </section>
-
-<section class="info">
-  <h2>India Travel Guide</h2>
-  <p>
-    India is a land of diverse culture, geography, climate and history.
-    From Himalayas to beaches, deserts to forests – every state has unique beauty.
-    Festivals like Diwali, Holi, Eid, Christmas make India colorful.
-  </p>
-</section>
-
-<footer>
-  © 2026 TPI – Travel Plan India
-</footer>
-
-<script>
-function go(){
-  const s = document.getElementById("search").value.toLowerCase().trim();
-  if(s){
-    window.location = "place.html?state=" + s;
-  }
-}
-</script>
-
-</body>
-</html>
