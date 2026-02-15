@@ -1,3 +1,4 @@
+// ===== SLIDER =====
 let index = 0;
 const slides = document.getElementById("slides");
 const totalSlides = slides.children.length;
@@ -15,24 +16,22 @@ function currentSlide(i){
   showSlide(i);
 }
 
-// Auto slide every 2 seconds
 setInterval(()=>{
   moveSlide(1);
 },2000);
-function goState(state){
-  window.location.href = "place.html?state=" + state;
-}
-function calculateCost(){
-  let distance = document.getElementById("distance").value;
-  let rate = document.getElementById("rate").value;
 
-  if(distance === "" || rate === ""){
-    document.getElementById("result").innerText = "Please enter both values";
+
+// ===== CALCULATOR =====
+function calculateCost(){
+  let distance = parseFloat(document.getElementById("distance").value);
+  let rate = parseFloat(document.getElementById("rate").value);
+
+  if(isNaN(distance) || isNaN(rate)){
+    document.getElementById("result").innerText = "Please enter valid numbers";
     return;
   }
 
   let total = distance * rate;
-
   document.getElementById("result").innerText =
     "Total Travel Cost: ₹ " + total;
 }
