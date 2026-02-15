@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TPI - Travel Plan India</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>TPI - Travel Plan India</h1>
+</header>
+
+<!-- ================= SLIDER ================= -->
+<section class="slider-section">
+  <div class="slider">
+
+    <div class="slides" id="slides">
+      <img src="https://picsum.photos/1200/400?1">
+      <img src="https://picsum.photos/1200/400?2">
+      <img src="https://picsum.photos/1200/400?3">
+      <img src="https://picsum.photos/1200/400?4">
+    </div>
+
+    <button class="prev" onclick="moveSlide(-1)">❮</button>
+    <button class="next" onclick="moveSlide(1)">❯</button>
+
+    <div class="dots">
+      <span onclick="currentSlide(0)"></span>
+      <span onclick="currentSlide(1)"></span>
+      <span onclick="currentSlide(2)"></span>
+      <span onclick="currentSlide(3)"></span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= INDIA MAP ================= -->
+<section class="india-map">
+  <h2>Explore India by State</h2>
+  <div class="map-container">
+    <img src="https://picsum.photos/600/600?india-map">
+
+    <div class="state-btn" style="top:60%; left:30%;">Rajasthan</div>
+    <div class="state-btn" style="top:70%; left:50%;">Maharashtra</div>
+    <div class="state-btn" style="top:40%; left:60%;">Uttar Pradesh</div>
+    <div class="state-btn" style="top:30%; left:40%;">Punjab</div>
+  </div>
+</section>
+
+<!-- ================= CALCULATOR ================= -->
+<section class="calculator">
+  <h2>Travel Cost Calculator</h2>
+
+  <input type="number" id="distance" placeholder="Distance in KM">
+  <input type="number" id="rate" placeholder="Cost per KM">
+
+  <button onclick="calculateCost()">Calculate</button>
+
+  <h3 id="result"></h3>
+</section>
+
+<footer>
+  <p>© 2026 TPI - Travel Plan India</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
