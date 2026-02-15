@@ -44,7 +44,7 @@ if(data[s]){
   time.innerText = data[s].time;
   cost.innerText = data[s].cost;
   ticket.href = data[s].ticket;
-  photo.src = "https://picsum.photos/800/400?random=" + Math.random();
+photo.src = "https://picsum.photos/800/400";
 }else{
   title.innerText = "State Not Found";
 }
