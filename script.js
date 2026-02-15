@@ -22,3 +22,17 @@ setInterval(()=>{
 function goState(state){
   window.location.href = "place.html?state=" + state;
 }
+function calculateCost(){
+  let distance = document.getElementById("distance").value;
+  let rate = document.getElementById("rate").value;
+
+  if(distance === "" || rate === ""){
+    document.getElementById("result").innerText = "Please enter both values";
+    return;
+  }
+
+  let total = distance * rate;
+
+  document.getElementById("result").innerText =
+    "Total Travel Cost: ₹ " + total;
+}
