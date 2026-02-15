@@ -19,3 +19,6 @@ function currentSlide(i){
 setInterval(()=>{
   moveSlide(1);
 },2000);
+function goState(state){
+  window.location.href = "place.html?state=" + state;
+}
