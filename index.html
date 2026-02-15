@@ -1,3 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TPI - Travel Plan India</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>TPI - Travel Plan India 🇮🇳</h1>
+    <p>Explore All Indian States Photos • tickets • Cost</p>
+</header>
+
+<section class="hero">
+    <h2>Explore Incredible India</h2>
+    
+    <input list="states" id="search" placeholder="Search any Indian state">
+    <datalist id="states">
+        <option value="Rajasthan">
+        <option value="Uttar Pradesh">
+        <option value="Maharashtra">
+        <option value="Gujarat">
+        <option value="Kerala">
+        <option value="Delhi">
+        <option value="Bihar">
+        <option value="Madhya Pradesh">
+        <option value="Tamil Nadu">
+        <option value="Karnataka">
+        <!-- baaki states later add ho sakte -->
+    </datalist>
+
+    <button onclick="go()">Search</button>
+</section>
+
+<!-- Auto Scroll Famous Places -->
+<section>
+    <h2 style="text-align:center">Famous Places</h2>
+    <section class="slider-section">
+        <div class="slider">
+            <div class="slides">
+                <img src="https://picsum.photos">
+                <img src="https://picsum.photos">
+                <img src="https://picsum.photos">
+                <img src="https://picsum.photos">
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="info">
+    <h2>India Travel Guide</h2>
+    <p>
+        India is a land of diverse culture, geography, climate and history.
+        From Himalayas to beaches, deserts to forests - every state has unique beauty.
+        Festivals like Diwali, Holi, Eid, Christmas make India colorful.
+    </p>
+</section>
+
+<footer>
+    <p>© 2024 TPI - Travel Plan India</p>
+</footer>
+
+<script>
+function go(){
+    const s = document.getElementById("search").value.toLowerCase().trim();
+    if(s){
+        window.location = "place.html?state=" + s;
+    }
+}
+</script>
+
+</body>
+</html>
 <section class="slider-section">
   <div class="slider">
 
